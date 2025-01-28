@@ -8,15 +8,16 @@ import (
 )
 
 type Shipment struct {
-	ShipmentID    []byte    `gorm:"type:binary(16);primaryKey"`               
-	OrderID       uint      `gorm:"not null" json:"orderID"`                  
-	CarrierID     uint      `gorm:"not null" json:"carrierID"`                
-	State         string    `gorm:"default:'Asigned'"`                       
-	DateAsignment time.Time `gorm:"autoCreateTime"`                           
+	ShipmentID    []byte    `gorm:"type:binary(16);primaryKey"`
+	OrderID       uint      `gorm:"not null" json:"orderID"`
+	CarrierID     uint      `gorm:"not null" json:"carrierID"`
+	State         string    `gorm:"default:'Asigned'"`
+	DateAsignment time.Time `gorm:"autoCreateTime"`
+}
 
-//Migration
+// Migration
 func (Shipment) TableName() string {
-	return "shipment" 
+	return "shipment"
 }
 
 // Generate UUID
