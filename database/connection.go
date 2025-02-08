@@ -26,8 +26,8 @@ func ConnectDB() {
 	}
 	log.Println("Connection sucessfully to database.")
 
-	// Migrar el esquema de los modelos
-	err = DB.AutoMigrate(&models.Shipment{}) // Asegúrate de migrar todos los modelos necesarios
+	// Migrate the schema of the models
+	err = DB.AutoMigrate(&models.Shipment{}) // Make sure to migrate all necessary models
 	if err != nil {
 		log.Fatalf("Error to migrate table with database: %v", err)
 	}
