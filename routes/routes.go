@@ -9,6 +9,6 @@ func SetupRoutes(router *gin.Engine) {
 
 	api := router.Group("/api/shippment")
 	{
-		api.POST("/create", controllers.CreateShipment)   // Crear un envío
+		api.POST("/create", controllers.CreateShipment)   // Create a shipment
 	}
 }
