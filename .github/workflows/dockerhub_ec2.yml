@@ -44,14 +44,14 @@ jobs:
               sudo systemctl enable docker
             fi
 
-            # Download the image
+            # Descargar la imagen
             sudo docker pull kevinseya/logistic_shippment_asignment:latest
 
-            # Stop and remove previous container
+            # Detener y eliminar contenedor previo
             sudo docker stop logistic_shippment_asignment || true
             sudo docker rm logistic_shippment_asignment || true
 
-            # Generate .env file
+            # Generar archivo .env
             echo "MYSQL_HOST=${{ secrets.MYSQL_HOST }}" >> .env
             echo "MYSQL_PORT=${{ secrets.MYSQL_PORT }}" >> .env
             echo "MYSQL_USER=${{ secrets.MYSQL_USER }}" >> .env
@@ -66,8 +66,7 @@ jobs:
 
             echo "PORT=${{ secrets.PORT }}" >> .env
 
-
-            # Run new container
+            # Ejecutar nuevo contenedor
             sudo docker run -d --name logistic_shippment_asignment \
               --env-file .env \
               -p 6001:6001 \
