@@ -19,7 +19,7 @@ const Shipment = postgresDb.define('Shipment', {
   status: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: 'PENDING'
+    defaultValue: 'ASSIGNED CARRIER'
   },
   created_at: {
     type: DataTypes.DATE,
