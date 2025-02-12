@@ -20,8 +20,14 @@ const postgresDb = new Sequelize({
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB,
-  logging: false
+  logging: false,
+  dialectOptions: {
+    ssl: {
+      require: true,  
+      rejectUnauthorized: false     }
+  }
 });
+
 
 const initializeDatabase = async () => {
   try {
