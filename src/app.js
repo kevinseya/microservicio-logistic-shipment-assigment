@@ -8,10 +8,10 @@ require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 
 const startServer = async () => {
   try {
-    // Inicializar conexiones de base de datos
+    // Initialize database connections
     await initializeDatabase();
     
-    // Sincronizar modelo con la base de datos
+   // Synchronize model with database
     await Shipment.sync({ force: false });
     console.log('Tabla sincronizada con PostgreSQL.');
 
