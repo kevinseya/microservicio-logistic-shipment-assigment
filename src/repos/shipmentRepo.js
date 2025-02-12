@@ -22,7 +22,7 @@ const createShipment = async (orderId, carrierId) => {
     const shipment = await Shipment.create({
       order_id: orderId,
       user_carrier_id: carrierId,
-      status: 'PENDING'
+      status: 'ASSIGNED CARRIER'
     });
     return shipment.get({ plain: true });
   } catch (error) {
